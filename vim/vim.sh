@@ -11,7 +11,7 @@ ctagstargz=$ctags.tar.gz
 taglist=taglist_46.zip
 
 function vim_install() {
-    sudo apt-get install vim -y    
+    sudo apt-get install vim -y
 }
 
 
@@ -36,6 +36,9 @@ function vim_config() {
 	# echo 'set smartindent' >> $VIMRC
 	echo 'autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2' >> $VIMRC
 	echo 'autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4' >> $VIMRC
+
+	echo 'nmap sp :split<cr>' >> $VIMRC
+	echo 'nmap vp :vsplit<cr>' >> $VIMRC
 }
 
 

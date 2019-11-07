@@ -6,7 +6,7 @@ VERSION="1.0.0"
 
 
 function git_install() {
-    sudo apt-get install git -y    
+    sudo apt-get install git -y
 }
 
 
