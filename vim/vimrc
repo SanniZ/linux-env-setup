@@ -1,0 +1,34 @@
+set nu
+
+set history=100
+
+set clipboard+=unnamed
+
+syntax on
+
+setlocal noswapfile
+set bufhidden=hide
+
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+
+set mouse=a
+set selection=exclusive 
+set selectmode=mouse,key
+
+set showmatch
+
+set tags=tags
+set autochdir
+
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4
+
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+nmap tl :Tlist<cr>
+set tags=$PWD/tags
+
+nmap vp :vsplit<cr>
+nmap sp :split<cr>
+nmap ex :<esc>

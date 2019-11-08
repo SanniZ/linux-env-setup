@@ -62,6 +62,7 @@ function vim_install_ctags_taglist() {
     echo 'let Tlist_Show_One_File=1' >> $VIMRC
     echo 'let Tlist_Exit_OnlyWindow=1' >> $VIMRC
     echo 'nmap tl :Tlist<cr>' >> $VIMRC
+    echo 'set tags=$PWD/tags' >> $VIMRC
 
     # install ctags
     cd $ctags

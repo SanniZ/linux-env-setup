@@ -1,0 +1,37 @@
+
+
+# alias for path
+alias cdb="cd -"
+alias cdu="cd .."
+alias cdl="cd ~/Downloads"
+alias cdc="cd ~/Documents"
+alias cws="cd $WS"
+alias cgit="cd $GIT"
+alias cpy="cd $MYPY"
+alias csh="cd $MYSH"
+alias cbin="cd $HBIN"
+
+
+# alias for git
+alias gst="git status"
+alias gdf="git diff"
+alias gaa="git add"
+alias gbr="git branch"
+alias gbra="git branch -a"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gfp="git format-patch"
+alias gfph="git format-patch HEAD~"
+alias glg="git log"
+alias gsw="git show"
+alias gsp='git show -p'
+alias gpm='git push origin master'
+
+# alias for python
+alias iba="ibus.py -a"
+alias ibu="ibus.py -u"
+alias ibr="ibus.py -r"
+alias ibs="ibus.py -s"
+
+# alias for others
+alias cpyc="find . -name __pycache__ | xargs rm -rf"
