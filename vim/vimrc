@@ -1,41 +1,30 @@
 set number
-
 set cursorline
 set nobackup
-
 set history=100
-
 set clipboard+=unnamed
-
 syntax on
-
 setlocal noswapfile
 set bufhidden=hide
-
-set ruler
-set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
-
+" set ruler
+" set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
 set mouse=a
-
 set showmatch
-
 set backspace=indent,eol,start
-
-set nowrap
-
-set hlsearch
-
+" set hlsearch
 set autochdir
-
 set wrap
 
+nmap ww :w<cr>
+nmap wq :wq<cr>
+nmap ee :
 nmap vp :vsplit<cr>
 nmap sp :split<cr>
 nmap wp :set wrap<cr>
 nmap nwp :set nowrap<cr>
 nmap ntab :set noexpandtab
 nmap etab :set expandtab
-
+nmap vvim :vsp ~/.vimrc<cr>
 
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4
@@ -56,25 +45,22 @@ Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 filetype plugin indent on
 
+" Plugin 'jiazhoulvke/MarkdownView'"
+" nmap mdv :MarkdownView"
+" Plugin 'godlygeek/tabular'""
+" Plugin 'plasticboy/vim-markdown'""
+" Plugin 'iamcco/markdown-preview.vim'"
+" nmap <silent> <F7> <Plug>MarkdownPreview"        " 普通模式"
+" imap <silent> <F7> <Plug>MarkdownPreview"        " 插入模式"
+" nmap <silent> <F8> <Plug>StopMarkdownPreview"    " 普通模式"
+" imap <silent> <F8> <Plug>StopMarkdownPreview"    " 插入模式"
 " map to run PluginInstall "
+
 nmap plgin :PluginInstall<cr>
 " map to edit .vimrc"
 nmap svim :so ~/.vimrc<cr>
-" switch to end line mode."
-nmap cmd :
-
 " nmap for markdown preview."
-nmap rmdv :! remarkable %<cr>
-nmap typv :! typora %<cr>
-nmap vmd :! vnote %<cr>
-
-"Plugin 'jiazhoulvke/MarkdownView'"
-"nmap mdv :MarkdownView"
-""Plugin 'godlygeek/tabular'""
-""Plugin 'plasticboy/vim-markdown'""
-"Plugin 'iamcco/markdown-preview.vim'"
-"nmap <silent> <F7> <Plug>MarkdownPreview"        " 普通模式"
-"imap <silent> <F7> <Plug>MarkdownPreview"        " 插入模式"
-"nmap <silent> <F8> <Plug>StopMarkdownPreview"    " 普通模式"
-"imap <silent> <F8> <Plug>StopMarkdownPreview"    " 插入模式"
-
+nmap rmdv :! remarkable %<cr><cr>
+nmap typv :! typora %<cr><cr>
+nmap vmd :! vnote %<cr><cr>
+nmap <F7> :! vnote %<cr><cr>

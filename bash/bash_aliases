@@ -1,9 +1,12 @@
 
+export DWN=~/Downloads
+export DOC=~/Documents
 export WS=~/workspace
 export GIT=~/.mygit
 export IBUS=$GIT/IBus
 export MYPY=$GIT/mypy
 export MYSH=$GIT/mysh
+
 # alias for apt
 alias aud='sudo apt-get update -y'
 alias agd='sudo apt-get upgrade -y'
@@ -18,8 +21,8 @@ alias vba='vim ~/.bash_aliases'
 # alias for path
 alias cdb="cd -"
 alias cdu="cd .."
-alias cdl="cd ~/Downloads"
-alias cdc="cd ~/Documents"
+alias cdl="cd $DWN"
+alias cdc="cd $DOC"
 alias cws="cd $WS"
 alias cgit="cd $GIT"
 alias cpy="cd $MYPY"
@@ -32,7 +35,7 @@ alias cwn="cd $GIT/worknotes"
 alias cis="cd $GIT/ibus"
 alias cmn="cd $GIT/mynotes"
 alias ctn="cd $GIT/technotes"
-alias clx='cd $GIT/linux-env-setup'
+alias cles='cd $GIT/linux-env-setup'
 
 # alias for git
 alias gst="git status"
