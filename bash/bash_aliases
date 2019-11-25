@@ -17,6 +17,7 @@ alias aiy='sudo apt-get install -y'
 alias sbc='source ~/.bashrc'
 alias vbc='vim ~/.bashrc'
 alias vba='vim ~/.bash_aliases'
+alias vvim='vim ~/.vimrc'
 
 # alias for path
 alias cdb="cd -"
@@ -74,13 +75,16 @@ alias mdd="python3 $HBIN/py/mdcrypto.pyc -d"
 alias docker_ubuntu="sudo docker run -it ubuntu /bin/bash"
 
 # alias for ibus
+alias ibh="python3 $MYPY/linux/ibus/ibus.py -h"
 alias iba="python3 $MYPY/linux/ibus/ibus.py -a"
 alias ibu="python3 $MYPY/linux/ibus/ibus.py -u"
 alias ibr="python3 $MYPY/linux/ibus/ibus.py -r"
 alias ibs="python3 $MYPY/linux/ibus/ibus.py -s"
 
 # alias for others
-alias cpyc="find . -name __pycache__ | xargs rm -rf && find . -name *.pyc | xargs rm -rf"
+# alias cpyc="find . -name __pycache__ | xargs rm -rf && find . -name *.pyc | xargs rm -rf"
+alias cpyc="find . -name __pycache__ -o -name *.pyc | xargs -I {} rm -rf {}"
+
 
 # alias for ctags
 alias ctags='ctags -R'
@@ -91,3 +95,4 @@ alias untar='tar -zxvf '
 alias rmd='remarkable '
 alias tya='typora '
 alias hap='haroopad '
+alias bdy="baiduyun.py "

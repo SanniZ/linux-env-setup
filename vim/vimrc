@@ -6,8 +6,8 @@ set clipboard+=unnamed
 syntax on
 setlocal noswapfile
 set bufhidden=hide
-" set ruler
-" set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
 set mouse=a
 set showmatch
 set backspace=indent,eol,start
@@ -15,16 +15,21 @@ set backspace=indent,eol,start
 set autochdir
 set wrap
 
+nmap sls :set hlsearch<cr>
+nmap snls :set nohlsearch<cr>
 nmap ww :w<cr>
 nmap wq :wq<cr>
-nmap ee :
+nmap ii :
 nmap vp :vsplit<cr>
 nmap sp :split<cr>
-nmap wp :set wrap<cr>
-nmap nwp :set nowrap<cr>
-nmap ntab :set noexpandtab
-nmap etab :set expandtab
+nmap swp :set wrap<cr>
+nmap snwp :set nowrap<cr>
+nmap sntab :set noexpandtab
+nmap stab :set expandtab
 nmap vvim :vsp ~/.vimrc<cr>
+" insert -> nornal
+imap <C-j> <Esc>
+nmap <C-i> :
 
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4
@@ -42,8 +47,21 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim    " Vundle 安装目录
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tomtom/tlib-vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
 call vundle#end()
 filetype plugin indent on
+
+"== vim-markdown =="
+let g:vim_markdown_fenced_languages = ['csharp=cs']
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+
+set foldenable
+nmap snfd :set nofoldenable
+nmap sfd  :set foldenable
 
 " Plugin 'jiazhoulvke/MarkdownView'"
 " nmap mdv :MarkdownView"
@@ -56,6 +74,7 @@ filetype plugin indent on
 " imap <silent> <F8> <Plug>StopMarkdownPreview"    " 插入模式"
 " map to run PluginInstall "
 
+" map to run PluginInstall.
 nmap plgin :PluginInstall<cr>
 " map to edit .vimrc"
 nmap svim :so ~/.vimrc<cr>
@@ -64,3 +83,6 @@ nmap rmdv :! remarkable %<cr><cr>
 nmap typv :! typora %<cr><cr>
 nmap vmd :! vnote %<cr><cr>
 nmap <F7> :! vnote %<cr><cr>
+
+" map to insert <br/> .
+imap <C-b>  <br/> 
