@@ -1,5 +1,6 @@
 set number
 set cursorline
+set cursorlineopt=number
 set nobackup
 set history=100
 set clipboard+=unnamed
@@ -14,12 +15,23 @@ set backspace=indent,eol,start
 " set hlsearch
 set autochdir
 set wrap
+set nowrapscan
+set hlsearch
+set incsearch
+set noeb
+set nocompatible
+set laststatus=2
+set statusline=%F%r\ [%l,%v,%P]\ [HEX=%B]
+set wildmenu
+set showcmd
+
 
 nmap sls :set hlsearch<cr>
 nmap snls :set nohlsearch<cr>
 nmap ww :w<cr>
 nmap wq :wq<cr>
 nmap ii :
+nmap ir :! 
 nmap vp :vsplit<cr>
 nmap sp :split<cr>
 nmap swp :set wrap<cr>

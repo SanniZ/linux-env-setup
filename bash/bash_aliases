@@ -2,10 +2,10 @@
 export DWN=~/Downloads
 export DOC=~/Documents
 export WS=~/workspace
-export GIT=~/.mygit
-export IBUS=$GIT/IBus
-export MYPY=$GIT/mypy
-export MYSH=$GIT/mysh
+export MYGIT=~/.mygit
+export IBUS=$MYGIT/IBus
+export MYPY=$MYGIT/mypy
+export MYSH=$MYGIT/mysh
 
 # alias for apt
 alias aud='sudo apt-get update -y'
@@ -18,6 +18,7 @@ alias sbc='source ~/.bashrc'
 alias vbc='vim ~/.bashrc'
 alias vba='vim ~/.bash_aliases'
 alias vvim='vim ~/.vimrc'
+alias vbe="vim ~/.bash_exports"
 
 # alias for path
 alias cdb="cd -"
@@ -25,18 +26,19 @@ alias cdu="cd .."
 alias cdl="cd $DWN"
 alias cdc="cd $DOC"
 alias cws="cd $WS"
-alias cgit="cd $GIT"
+alias cgit="cd $MYGIT"
 alias cpy="cd $MYPY"
 alias csh="cd $MYSH"
 alias cbin="cd $HBIN"
 alias cbpy="cd $HBIN/py"
 alias cbsh="cd $HBIN/sh"
-alias cmd="cd $GIT/markdown"
-alias cwn="cd $GIT/worknotes"
-alias cis="cd $GIT/ibus"
-alias cmn="cd $GIT/mynotes"
-alias ctn="cd $GIT/technotes"
-alias cles='cd $GIT/linux-env-setup'
+alias cmd="cd $MYGIT/markdown"
+alias cwn="cd $MYGIT/worknotes"
+alias cis="cd $MYGIT/ibus"
+alias cmn="cd $MYGIT/mynotes"
+alias ctn="cd $MYGIT/technotes"
+alias cles="cd $MYGIT/linux-env-setup"
+alias ces="cd $MYGIT/essentials"
 
 # alias for git
 alias gst="git status"
@@ -51,6 +53,8 @@ alias gca="git commit --amend"
 alias gfp="git format-patch"
 alias gfph="git format-patch HEAD~"
 alias glg="git log"
+alias glgs="git log --stat"
+alias glgn="git log --name-status"
 alias glga="git log --pretty=oneline --graph --decorate --all"
 alias gsw="git show"
 alias gsp='git show -p'
@@ -60,16 +64,18 @@ alias grhh='git reset --hard HEAD~'
 
 
 # alias for python
-alias mygit="bash $GIT/mysh/git/mygit.sh"
-alias mygitp="bash $GIT/mysh/git/mygit.sh -p"
-alias mygitm="bash $GIT/mysh/git/mygit.sh -m"
-alias mygitn="bash $GIT/mysh/git/mygit.sh -n"
-alias mygits="bash $GIT/mysh/git/mygit.sh -n -m"
+mygit="$MYGIT/mysh/git/mygit.sh"
+alias mygitp="bash $mygit -p"
+alias mygitm="bash $mygit -m"
+alias mygitn="bash $mygit -n"
+alias mygitc="bash $mygit -n -m"
 
-#alias mdc="python3 $HBIN/py/mdcrypto.pyc"
+# alias mdc="python3 $HBIN/py/mdcrypto.pyc"
 alias mde="python3 $HBIN/py/mdcrypto.pyc -e"
 alias mdd="python3 $HBIN/py/mdcrypto.pyc -d"
 
+alias bwn="python3 $MYPY/tools/baiduyun/bakmarkdown/bakworknotes.py -u"
+alias bmn="python3 $MYPY/tools/baiduyun/bakmarkdown/bakmynotes.py -u"
 
 #alias for shell
 alias docker_ubuntu="sudo docker run -it ubuntu /bin/bash"
