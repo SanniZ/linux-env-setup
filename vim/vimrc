@@ -1,6 +1,6 @@
 set number
-set cursorline
-set cursorlineopt=number
+" set cursorline
+" set cursorlineopt=number
 set nobackup
 set history=100
 set clipboard+=unnamed
@@ -43,8 +43,11 @@ nmap vvim :vsp ~/.vimrc<cr>
 imap <C-j> <Esc>
 nmap <C-i> :
 
+
+autocmd BufNewFile,BufRead *.* set cursorline cursorlineopt=number
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.c,*.cpp set expandtab tabstop=4 shiftwidth=4
 
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
