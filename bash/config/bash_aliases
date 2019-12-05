@@ -1,0 +1,96 @@
+# set export via .bash_exports.
+if [ -f ~/.bash_exports ]; then
+    . ~/.bash_exports
+fi
+
+# set vars for alias.
+LINUX2WIN=~/linux2win  # path of linux share to windows.
+MYGIT=$LINUX2WIN/mygit  # path of mygit.
+HBIN=~/bin  # path of bin
+MYGIT_SH="$MYGIT/mysh/git/mygit.sh"  # mygit.sh
+MDCRYPTO_PY=$MYPY/tools/markdown/mdcrypto.py  # mdcrypto.py
+IBUS_PY=$MYPY/linux/ibus/ibus.py  # ibus.py
+
+# alias for apt
+alias aud='sudo apt-get update -y'
+alias agd='sudo apt-get upgrade -y'
+alias arm='sudo apt-get autoremve -y'
+alias aiy='sudo apt-get install -y'
+
+# alias for sys
+alias sbc="source ~/.bashrc"
+alias vbc="vim ~/.bashrc"
+alias vba="vim ~/.bash_aliases"
+alias vbe="vim ~/bash_exports"
+alias vvim="vim ~/.vimrc"
+
+# alias to change work path
+alias cdb="cd -"
+alias cdu="cd .."
+alias cdl="cd ~/Downloads"
+alias cdc="cd ~/Documents"
+alias clw="cd $LINUX2WIN"
+alias cgit="cd $MYGIT"
+alias cles="cd $MYGIT/linux-env-setup"
+alias cpy="cd $MYGIT/mypy"
+alias csh="cd $MYGIT/mysh"
+alias cwn="cd $MYGIT/worknotes"
+alias cis="cd $MYGIT/ibus"
+alias cmn="cd $MYGIT/mynotes"
+alias ctn="cd $MYGIT/technotes"
+alias ces="cd $MYGIT/essentials"
+alias cbin="cd $HBIN"
+alias cbpy="cd $HBIN/py"
+alias cbsh="cd $HBIN/sh"
+
+# alias for git
+alias gst="git status"
+alias gss='git status -s'
+alias gdf="git diff"
+alias gdt='git difftool'
+alias gaa="git add"
+alias gbr="git branch"
+alias gbra="git branch -a"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gfp="git format-patch"
+alias gfph="git format-patch HEAD~"
+alias glg="git log"
+alias glga="git log --pretty=oneline --graph --decorate --all"
+alias gsw="git show"
+alias gsp='git show -p'
+alias gpm='git push origin master'
+alias grh='git reset --hard'
+alias grhh='git reset --hard HEAD~'
+
+
+# alias for mygit.
+alias mygitp="bash $MYGIT_SH -p"
+alias mygitm="bash $MYGIT_SH -m"
+alias mygitn="bash $MYGIT_SH -n"
+alias mygitc="bash $MYGIT_SH -m -n"
+alias mygits="bash $MYGIT_SH -s"
+
+#alias for markdown crypto
+alias mdd="python3 $MDCRYPTO_PY -K ~/bin/py/md5.key -d"
+alias mde="python3 $MDCRYPTO_PY -K ~/bin/py/md5.key -e"
+
+#alias for docker run ubuntu.
+alias docker_ubuntu="sudo docker run -it ubuntu /bin/bash"
+
+# alias for ibus
+alias ibh="python3 $IBUS_PY -h"
+alias iba="python3 $IBUS_PY -a"
+alias ibu="python3 $IBUS_PY -u"
+alias ibr="python3 $IBUS_PY -r"
+alias ibs="python3 $IBUS_PY -s"
+
+# alias for python
+alias cpyc="find . -name __pycache__ -o -name *.pyc | xargs -I {} rm -rf {}"  # clear temp files.
+
+# alias for ctags
+alias ctags='ctags -R'
+
+# alias for linux
+alias getpass='openssl rand -base64 '
+alias untar='tar -zxvf '
