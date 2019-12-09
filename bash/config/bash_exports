@@ -1,6 +1,6 @@
 export HBIN=~/bin
-export HBPY=$HBIN/py
-export HBSH=$HBIN/sh
+export HBINPY=$HBIN/py
+export HBINSH=$HBIN/sh
 
 export DWN=~/Downloads
 export DOC=~/Documents
@@ -11,9 +11,6 @@ export MYPY=$MYGIT/mypy
 export MYSH=$MYGIT/mysh
 
 export IBUS=$MYGIT/ibus
-export HBPY=$HBIN/py
-export HBSH=$HBIN/sh
-
 
 # cmake
 # export CMAKE=$HOME/.cmake/cmake-3.15.0-Linux-x86_64/bin
@@ -24,5 +21,3 @@ export PYTHONPATH=$PYTHONPATH:$MYPY
 # path
 MYPATH=$HBIN:$HBPY:$HBSH:$CMAKE
 export PATH=$MYPATH:$PATH
-
-export PTEST=~/test

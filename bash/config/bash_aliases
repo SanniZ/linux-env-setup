@@ -11,6 +11,7 @@ MYGIT_SH="$MYGIT/mysh/git/mygit.sh"  # mygit.sh
 MDCRYPTO_PY=$MYPY/tools/markdown/mdcrypto.py  # mdcrypto.py
 IBUS_PY=$MYPY/linux/ibus/ibus.py  # ibus.py
 BASHBK_SH=$MYGIT/linux-env-setup/bash/bashbk.sh  # bashbk.sh
+MD2BDY_PY=$MYPY/tools/markdown/md2bdy.py
 
 # alias for apt
 alias aud='sudo apt-get update -y'
@@ -25,8 +26,12 @@ alias vba="vim ~/.bash_aliases"
 alias vbe="vim ~/bash_exports"
 alias vvim="vim ~/.vimrc"
 
-# alias for backup bash files.
+# alias for backup to baiduyun.
 alias bkbash="bash $BASHBK_SH -b $MYGIT/linux-env-setup/bash/config"
+alias bkmn="python3 $MD2BDY_PY -l $MYGIT/mynotes -y myMarkdown/mynotes -e"
+alias bkwn="python3 $MD2BDY_PY -l $MYGIT/worknotes -y myMarkdown/worknotes -e"
+alias bktn="python3 $MD2BDY_PY -l $MYGIT/technotes -y myMarkdown/technotes"
+
 
 # alias to change work path
 alias cdb="cd -"
@@ -78,8 +83,8 @@ alias mygitc="bash $MYGIT_SH -m -n"
 alias mygits="bash $MYGIT_SH -s"
 
 #alias for markdown crypto
-alias mdd="python3 $MDCRYPTO_PY -K ~/bin/py/md5.key -d"
-alias mde="python3 $MDCRYPTO_PY -K ~/bin/py/md5.key -e"
+alias mdd="python3 $MDCRYPTO_PY -K ~/bin/py/markdown.key -d"
+alias mde="python3 $MDCRYPTO_PY -K ~/bin/py/markdown.key -e"
 
 #alias for docker run ubuntu.
 alias docker_ubuntu="sudo docker run -it ubuntu /bin/bash"
