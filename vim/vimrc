@@ -1,62 +1,61 @@
+syntax on
+
 set number
-" set cursorline
+set cursorline
 " set cursorlineopt=number
 set nobackup
 set history=100
 set clipboard+=unnamed
-syntax on
-setlocal noswapfile
 set bufhidden=hide
+setlocal noswapfile
 set ruler
 set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
 set mouse=a
 set showmatch
 set backspace=indent,eol,start
 " set hlsearch
+set incsearch
 set autochdir
 set wrap
 set nowrapscan
-set hlsearch
-set incsearch
 set noeb
 set nocompatible
 set laststatus=2
 set statusline=%F%r\ [%l,%v,%P]\ [HEX=%B]
 set wildmenu
 set showcmd
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 
-nmap sls :set hlsearch<cr>
-nmap snls :set nohlsearch<cr>
-nmap ww :w<cr>
-nmap wq :wq<cr>
-nmap ii :
-nmap ir :! 
-nmap vp :vsplit<cr>
-nmap sp :split<cr>
-nmap swp :set wrap<cr>
-nmap snwp :set nowrap<cr>
-nmap sntab :set noexpandtab
-nmap stab :set expandtab
-nmap vvim :vsp ~/.vimrc<cr>
-" insert -> nornal
-imap <C-j> <Esc>
-nmap <C-i> :
+" ===============
+"  filetype
+" ===============
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js
+            \ set noexpandtab |
+            \ set tabstop=2 |
+            \ set shiftwidth=2
+" set to  markdown
+autocmd BufNewFile,BufRead *.md
+            \ set fileformat=unix |
+            \ map <F7> :! code % <cr><cr> |
+            \ imap <C-b> <br/> |
+            \ set nofoldenable
 
 
-autocmd BufNewFile,BufRead *.* set cursorline cursorlineopt=number
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2
-autocmd BufNewFile,BufRead *.py,*.sh set expandtab tabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.c,*.cpp set expandtab tabstop=4 shiftwidth=4
-
+" set for TagList
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
-nmap tl :Tlist<cr>
-set tags=$PWD/tags
+set tags=$PWD/tags   " set tags to current folder.
 
 let g:vim_markdown_frontmatter=1
 
+
+
+" ==============================
 " install vundle for vim "
+" =============================
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim    " Vundle 安装目录
@@ -74,9 +73,16 @@ let g:vim_markdown_fenced_languages = ['csharp=cs']
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
-set foldenable
-nmap snfd :set nofoldenable
-nmap sfd  :set foldenable
+
+" == kite-python == "
+let g:kite_auto_complete=1
+let g:kite_tab_complete=1
+set completeopt+=menuone
+" set completeopt+=oninsert
+set completeopt+=longest
+set completeopt+=preview
+autocmd completeDone * if !pumvisible() | pclose | endif
+set belloff+=ctrlg   " if vim beeps during completion.
 
 " Plugin 'jiazhoulvke/MarkdownView'"
 " nmap mdv :MarkdownView"
@@ -87,17 +93,36 @@ nmap sfd  :set foldenable
 " imap <silent> <F7> <Plug>MarkdownPreview"        " 插入模式"
 " nmap <silent> <F8> <Plug>StopMarkdownPreview"    " 普通模式"
 " imap <silent> <F8> <Plug>StopMarkdownPreview"    " 插入模式"
-" map to run PluginInstall "
 
-" map to run PluginInstall.
-nmap plgin :PluginInstall<cr>
-" map to edit .vimrc"
+
+" ======================================
+" normal mode key maps.
+" ======================================
+nmap tl :Tlist<cr>
+nmap hl :set hlsearch<cr>
+nmap nls :set nohlsearch<cr>
+nmap q1 :q!<cr>
+nmap ww :w<cr>
+nmap wq :wq<cr>
+nmap ii :
+nmap ir :! 
+nmap cc :! 
+nmap vp :vsplit<cr>
+nmap sp :split<cr>
+nmap wp :set wrap<cr>
+nmap nwp :set nowrap<cr>
+nmap ntab :set noexpandtab
+nmap etab :set expandtab
+nmap vvim :vsp ~/.vimrc<cr>
 nmap svim :so ~/.vimrc<cr>
-" nmap for markdown preview."
-nmap rmdv :! remarkable %<cr><cr>
-nmap typv :! typora %<cr><cr>
-nmap vmd :! vnote %<cr><cr>
-nmap <F7> :! vnote %<cr><cr>
+nmap <C-i> :
+nmap cln  :set cursorline cursorlineopt=number
+nmap ncln :set nocursorlineo
+nmap nfd :set nofoldenable
+nmap efd  :set foldenable
+" map to run PluginInstall.
+nmap pin :PluginInstall<cr>
 
-" map to insert <br/> .
-imap <C-b>  <br/> 
+" ===============================
+" Insert mode key maps
+" ================================

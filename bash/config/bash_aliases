@@ -57,6 +57,7 @@ alias LL='ll'
 # alias for git
 alias gst="git status"
 alias gss='git status -s'
+alias gco='git checkout'
 alias gdf="git diff"
 alias gdt='git difftool'
 alias gaa="git add"
